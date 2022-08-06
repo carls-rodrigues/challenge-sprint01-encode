@@ -32,16 +32,21 @@ const btnDecrypt = document.getElementById('btn-decrypt');
 const btnCopy = document.getElementById('btn-copy');
 const textArea = document.getElementById('text-area');
 const asideTextArea = document.querySelector('.aside-text')
+const asideCopyBtnArea = document.querySelector('.aside-copy-btn')
 const asideTextP = document.querySelector('.result')
 
-btnEncrypt.addEventListener('click', () => { 
+btnEncrypt.addEventListener('click', () => {
+  if(!textArea.value) return
   hideElements()
+  asideCopyBtnArea.style.display = 'flex'
   asideTextArea.style.display = 'flex'
   asideTextP.innerHTML = encrypt(textArea.value)
   textArea.value = ''
 })
 btnDecrypt.addEventListener('click', () => {
+  if(!textArea.value) return
   hideElements()
+  asideCopyBtnArea.style.display = 'flex'
   asideTextArea.style.display = 'flex'
   asideTextP.innerHTML = descriptor(textArea.value)
   textArea.value = ''
