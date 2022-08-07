@@ -28,9 +28,11 @@
       </main>    
       <footer>
         <p> Developed by <a href="http://github.com/carls-rodrigues" target="_blank">Carlos Rodrigues</a></p>
-        <i class='bx bxl-instagram' ></i>
-        <i class='bx bxl-github'></i>
-        <i class='bx bxl-linkedin-square' ></i>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/carlsrodrigues/" target="_blank"><i class='bx bxl-instagram'></i></a>
+          <a href="https://github.com/carls-rodrigues" target="_blank"><i class='bx bxl-github'></i></i></a>
+          <a href="https://www.linkedin.com/in/carlsrodrigues/" target="_blank"><i class='bx bxl-linkedin-square'></i></i></a>
+        </div>
       </footer> 
     </section>
     <aside>
@@ -43,13 +45,14 @@
       </div>
       <div class="filled-message-content">
         <div class="message-content">
-          <p class="message">Message</p>
+          <p id="message" class="message"></p>
         </div>
         <div class="message-btn">
-          <button id="btn-decrypt" class="btn btn-secondary">Copiar</button>
+          <button id="btn-copy" class="btn btn-secondary">Copiar</button>
         </div>
       </div>
     </aside>
   </div>
+  <script src="./js/bundler.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ function encrypt(str) {
   result = str.replace(/[aeiou]/g, (match) => key[match]);
   return result;
 }
-function descriptor(str) {
+function decrypt(str) {
   const key = {
     "enter": "e",
     "imes": "i",
@@ -30,36 +30,34 @@ function descriptor(str) {
 const btnEncrypt = document.getElementById('btn-encrypt');
 const btnDecrypt = document.getElementById('btn-decrypt');
 const btnCopy = document.getElementById('btn-copy');
-const textArea = document.getElementById('text-area');
-const asideTextArea = document.querySelector('.aside-text')
-const asideCopyBtnArea = document.querySelector('.aside-copy-btn')
-const asideTextP = document.querySelector('.result')
+const textArea = document.getElementById('text-input');
+const addTextToPTag = document.getElementById('message');
 
 btnEncrypt.addEventListener('click', () => {
-  if(!textArea.value) return
-  hideElements()
-  asideCopyBtnArea.style.display = 'flex'
-  asideTextArea.style.display = 'flex'
-  asideTextP.innerHTML = encrypt(textArea.value)
+  const hasValue = hideElements(!!textArea.value)
+  if (!hasValue) return
+  addTextToPTag.innerHTML = encrypt(textArea.value)
   textArea.value = ''
 })
 btnDecrypt.addEventListener('click', () => {
-  if(!textArea.value) return
-  hideElements()
-  asideCopyBtnArea.style.display = 'flex'
-  asideTextArea.style.display = 'flex'
-  asideTextP.innerHTML = descriptor(textArea.value)
+  const hasValue = hideElements(!!textArea.value)
+  if (!hasValue) return
+  addTextToPTag.innerHTML = decrypt(textArea.value)
   textArea.value = ''
 })
 
 btnCopy.addEventListener('click', async () => { 
-  const asideTextP = document.querySelector('.result')
+  const asideTextP = document.querySelector('.message')
   await navigator.clipboard.writeText(asideTextP.innerHTML.trim())
 })
 
-function hideElements() {
-  const image = document.querySelector('.empty-bg')
-  image.style.display = 'none'
-  const asideMessages = document.querySelector('.aside-messages')
-  asideMessages.style.display = 'none'
+function hideElements(hasValue) {
+  if (hasValue) { 
+    document.querySelector('.empty-message-content').style.display = 'none'
+    document.querySelector('.filled-message-content').style.display = 'flex'
+    return true
+  }
+  document.querySelector('.filled-message-content').style.display = 'none'
+  document.querySelector('.empty-message-content').style.display = 'flex'
+  return false
 }
