@@ -117,7 +117,7 @@ aside {
 .aside-text {
   display: none;
   max-width: 100%;
-  height: 76%;
+  /* height: 76%; */
   overflow: auto;
   flex-direction: column;
   justify-content: space-between;
@@ -141,6 +141,10 @@ aside {
     justify-content: space-between;
     padding-top: 2.5rem;
     padding-left: 0;
+    padding-bottom: 40px;
+  }
+  aside {
+    height: auto;
   }
   .actions {
     margin-top: 308px;
