@@ -7,11 +7,12 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
 .container {
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: auto;
   margin: 0 auto;
   padding-top: 2.5rem;
   padding-left: 5.25rem;
@@ -35,7 +36,16 @@ main {
   height: 48px;
 }
 textarea {
-  margin-left: 124px;
+  width: 680px;
+  max-width: 680px;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 .actions {
   display: flex;
@@ -61,31 +71,31 @@ textarea {
   max-width: 328px;
   height: 67px;
   max-height: 67px;
-  background: #0A3871;
   border: 1px solid #0A3871;
-  color: #FFF;
   font-weight: 400;
   cursor: pointer;
 }
-.btn:last-child {
-  flex: 1;
-  border-radius: 242px;
-  height: 67px;
+.btn-primary {
+  background: #0A3871;
+  color: #FFF;
+}
+.btn-secondary {
   background: #D8DFE8;
-  border: 1px solid #0A3871;
   color: #0A3871;
-  font-weight: 400;
 }
 aside {
   width: 400px;
-  height: 92.5%;
+  height:  calc(100vh - 80px);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .aside-content {
   display: flex;
+  width: 336px;
   height: 100%                        ;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 .aside-messages {
@@ -106,14 +116,44 @@ aside {
 }
 .aside-text {
   display: none;
-  height: 100%;
+  max-width: 100%;
+  height: 76%;
+  overflow: auto;
   flex-direction: column;
   justify-content: space-between;
 }
+.aside-copy-btn {
+  width: 100%;
+  display: none;
+  justify-content: center
+}
 .result {
   user-select: none;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 2rem;
   font-weight: 400;
-  max-width: 336px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2.5rem;
+    padding-left: 0;
+  }
+  .actions {
+    margin-top: 308px;
+  }
+  .empty-bg {
+    display: none;
+  }
+  .aside-text {
+    min-height: 130px;
+  }
+}
+@media (min-width: 1368px) {
+  textarea {    
+    margin-left: 124px;
+  }
 }
