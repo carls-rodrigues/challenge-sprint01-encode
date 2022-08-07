@@ -6,44 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<title>Challenge ONE - Decodificador de Texto</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <title>Challenge ONE - Decodificador de Texto</title>
 </head>
 <body>
   <div class="container">
-    <main>
-      <div class="header">
-        <img class="logo" src="./assets/images/vector.png" alt="" srcset="">
-        <textarea id="text-area" type="text" placeholder="Digite seu texto"></textarea>
-      </div>
-      <div class="actions">
-        <div class="message-disclaimer">
-          <img src="./assets/images/alert.png" alt="" srcset="">
-          <span>Apenas letras minúsculas e sem acento.</span>
+    <section class="section">
+      <header>
+        <img src="./assets/images/logo.png" alt="" srcset="">
+      </header> 
+      <main>
+        <div class="input-area">
+          <textarea name="text-input" id="text-input" rows="10" placeholder="Digite seu texto"></textarea>
         </div>
-        <div class="btn-actions">
+        <div class="btn-area">
           <button id="btn-encrypt" class="btn btn-primary">Criptografar</button>
           <button id="btn-decrypt" class="btn btn-secondary">Descriptografar</button>
         </div>
-      </div>
-    </main>
+      </main>    
+      <footer>
+        <p> Developed by <a href="http://github.com/carls-rodrigues" target="_blank">Carlos Rodrigues</a></p>
+        <i class='bx bxl-instagram' ></i>
+        <i class='bx bxl-github'></i>
+        <i class='bx bxl-linkedin-square' ></i>
+      </footer> 
+    </section>
     <aside>
-      <div class="aside-content">
-        <div class="aside-text">
-          <p class="result" id="result"></p>
+      <div class="empty-message-content">
+        <div class="bg-content">
+          <img src="./assets/images/image.png" alt="">
         </div>
-        <div class="aside-copy-btn">
-          <button id="btn-copy" class="btn btn-secondary">Copiar</button>
+        <h2>Nenhuma mensagem encontrada</h2>
+        <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+      </div>
+      <div class="filled-message-content">
+        <div class="message-content">
+          <p class="message">Message</p>
         </div>
-        <img class="empty-bg" src="./assets/images/image.png" alt="">
-        <div class="aside-messages">
-          <h2>Nenhuma mensagem encontrada</h2>
-          <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+        <div class="message-btn">
+          <button id="btn-decrypt" class="btn btn-secondary">Copiar</button>
         </div>
       </div>
     </aside>
   </div>
-  <script src="./js/bundler.js"></script>
 </body>
 </html>
